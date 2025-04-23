@@ -4,6 +4,8 @@
 import Link from 'next/link'
 import { useAppContext } from '@/context/app-context'
 import Image from 'next/image'
+import ScaleInWrapper from './animations/scale-in-wrapper'
+// import SlideLeftWrapper from './animations/slide-left-wrapper'
 
 const navItems = [
   { name: 'Home', path: '/' },
@@ -20,28 +22,36 @@ export default function Navbar() {
     <header className="fixed w-full z-50 bg-white/80 backdrop-blur-md shadow-sm text-gray-800 font-serif">
       <nav className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
         <div className="flex items-center gap-4">
-          <Image
-            src="/logo.jpg"
-            alt="Logo"
-            width={50}
-            height={50}
-            className="rounded-full object-cover"
-          />
-          <h1 className="text-2xl font-semibold tracking-wide text-[rgb(var(--color-primary))]">
-            Estudio
-          </h1>
+          <ScaleInWrapper delay={0.3}>
+            <Image
+              src="/logo.jpg"
+              alt="Logo"
+              width={50}
+              height={50}
+              priority
+              className="rounded-full object-cover"
+            />
+          </ScaleInWrapper>
+          <ScaleInWrapper delay={0.3}
+          >
+            <h1 className="text-2xl font-semibold tracking-wide text-[rgb(var(--color-primary))]">
+              Estudio
+            </h1>
+          </ScaleInWrapper>
         </div>
 
         <ul className="hidden md:flex gap-10 text-lg">
           {navItems.map((item) => (
-            <li key={item.path}>
-              <Link
-                href={item.path}
-                className="hover:text-[rgb(var(--color-primary))] transition-colors duration-300"
-              >
-                {item.name}
-              </Link>
-            </li>
+            <ScaleInWrapper key={item.path} delay={0.3}>
+              <li key={item.path}>
+                <Link
+                  href={item.path}
+                  className="hover:text-[rgb(var(--color-primary))] transition-colors duration-300"
+                >
+                  {item.name}
+                </Link>
+              </li>
+            </ScaleInWrapper>
           ))}
         </ul>
 

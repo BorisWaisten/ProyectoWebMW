@@ -4,14 +4,15 @@ import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <section className="h-screen flex flex-col justify-center items-center text-center px-6">
-      <Image
-        src="/logo.jpg"
-        alt="Estudio Logo"
-        width={120}
-        height={120}
-        className="mb-6"
-      />
+    <section className="h-screen  flex flex-col justify-center items-center text-center px-6 bg-[url('/hero.jpg')]">
+        <Image
+          src="/logo.jpg"
+          alt="Estudio Logo"
+          width={120}
+          height={120}
+          priority
+          className="mb-6"
+        />
       <h1 className="text-5xl md:text-7xl font-bold tracking-wide mb-4">
         Estudio de Diseño
       </h1>
