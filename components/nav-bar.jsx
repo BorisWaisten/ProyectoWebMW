@@ -1,11 +1,10 @@
-// components/Navbar.jsx
 'use client'
 
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useAppContext } from '@/context/app-context'
 import Image from 'next/image'
 import ScaleInWrapper from './animations/scale-in-wrapper'
-// import SlideLeftWrapper from './animations/slide-left-wrapper'
 
 const navItems = [
   { name: 'Home', path: '/' },
@@ -17,14 +16,30 @@ const navItems = [
 
 export default function Navbar() {
   const { menuOpen, setMenuOpen } = useAppContext()
+  const [isTop, setIsTop] = useState(true)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsTop(window.scrollY < 10)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
-    <header className="fixed w-full z-50 bg-white/80 backdrop-blur-md shadow-sm text-gray-800 font-serif">
-      <nav className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+      <header
+        className={`fixed w-full z-50 transition-all duration-300 font-serif ${
+          isTop
+            ? 'bg-transparent backdrop-blur-none'
+            : 'ease-in-out  bg-[rgb(var(--color-bg))] shadow-md shadow-gray-600/50'
+        }`}
+      >
+      <nav className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center text-gray-800">
         <div className="flex items-center gap-4">
           <ScaleInWrapper delay={0.3}>
             <Image
-              src="/logo.jpg"
+              src="/images/logo.jpg"
               alt="Logo"
               width={50}
               height={50}
@@ -32,8 +47,7 @@ export default function Navbar() {
               className="rounded-full object-cover"
             />
           </ScaleInWrapper>
-          <ScaleInWrapper delay={0.3}
-          >
+          <ScaleInWrapper delay={0.3}>
             <h1 className="text-2xl font-semibold tracking-wide text-[rgb(var(--color-primary))]">
               Estudio
             </h1>
@@ -43,7 +57,7 @@ export default function Navbar() {
         <ul className="hidden md:flex gap-10 text-lg">
           {navItems.map((item) => (
             <ScaleInWrapper key={item.path} delay={0.3}>
-              <li key={item.path}>
+              <li>
                 <Link
                   href={item.path}
                   className="hover:text-[rgb(var(--color-primary))] transition-colors duration-300"
@@ -55,7 +69,6 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Mobile Menu Toggle */}
         <button
           className="md:hidden text-3xl text-[rgb(var(--color-primary))]"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -65,7 +78,6 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile Menu */}
       <div
         className={`md:hidden bg-white text-gray-800 px-6 transition-all duration-500 overflow-hidden ${
           menuOpen ? 'max-h-96 pt-4' : 'max-h-0'

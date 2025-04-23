@@ -19,7 +19,7 @@ export default function Home() {
         <SectionBranding
           title="Diseñamos con alma"
           description="Creemos en el poder de las ideas y en la belleza de lo simple. Creamos identidades visuales que transmiten emociones."
-          image="/branding.jpg"
+          image="/images/branding.jpg"
         />
       </RevealWrapper>
       <RevealWrapper delay={0.3}>
@@ -27,7 +27,7 @@ export default function Home() {
         <SectionBranding
           title="Nuestro enfoque"
           description="Desde el concepto hasta la ejecución, cada paso está guiado por la sensibilidad estética y el detalle técnico."
-          image="/branding-2.jpg"
+          image="/images/branding-2.jpg"
           reverse
         />
       </RevealWrapper>
@@ -35,7 +35,7 @@ export default function Home() {
         <SectionBranding
           title="Nuestro enfoque"
           description="Desde el concepto hasta la ejecución, cada paso está guiado por la sensibilidad estética y el detalle técnico."
-          image="/branding-3.jpg"
+          image="/images/branding-3.jpg"
         />
         
         </RevealWrapper>
@@ -43,7 +43,7 @@ export default function Home() {
           title="Nosotras somos el estudio"
           subtitle="Un equipo creativo con alma"
           description="Somos un estudio liderado por mujeres apasionadas por el diseño. Combinamos sensibilidad estética, investigación y estrategia para contar historias visuales con profundidad."
-          image="/about.jpg"
+          image="/images/about.jpg"
         />
         <SectionInstagram />
    </main>

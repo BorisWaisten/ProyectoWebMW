@@ -10,6 +10,21 @@ const theme = createTheme({
     secondary: {
       main: '#e9967a', // peach (var(--color-secondary))
     },
+    coral: {
+      main: '#e37c7e', // color extraído del branding
+    },
+    mint: {
+      main: '#aecb83',
+    },
+    blush: {
+      main: '#fae4e1',
+    },
+    lightmint: {
+      main: '#bfdcc7',
+    },
+    dark: {
+      main: '#030304',
+    },
     background: {
       default: '#fffaf9', // fondo muy claro y suave
       paper: '#ffffff',   // tarjetas blancas

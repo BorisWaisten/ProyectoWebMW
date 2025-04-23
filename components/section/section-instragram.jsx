@@ -5,11 +5,11 @@ import Image from 'next/image'
 import SlideUpOnScroll from '@/components/animations/slide-up-wrapper'
 
 const images = [
-  {link:'https://www.instagram.com/p/C-lDd3bRmg8/?img_index=1',src:'/instragram-1.jpg'},
-  {link:'https://www.instagram.com/p/C69AXS4OebD/?img_index=1',src:'/instragram-2.jpg'},
-  {link:'https://www.instagram.com/p/C4dMWpYLPSQ/?img_index=1',src:'/instragram-3.jpg'},
-  {link:'https://www.instagram.com/p/Cyy-po7rS1n/?img_index=1',src:'/instragram-4.jpg'},
-  {link:'https://www.instagram.com/p/CvN0zYirGdv/?img_index=1',src:'/instragram-5.jpg'},
+  {link:'https://www.instagram.com/p/C-lDd3bRmg8/?img_index=1',src:'/images/instragram-1.jpg'},
+  {link:'https://www.instagram.com/p/C69AXS4OebD/?img_index=1',src:'/images/instragram-2.jpg'},
+  {link:'https://www.instagram.com/p/C4dMWpYLPSQ/?img_index=1',src:'/images/instragram-3.jpg'},
+  {link:'https://www.instagram.com/p/Cyy-po7rS1n/?img_index=1',src:'/images/instragram-4.jpg'},
+  {link:'https://www.instagram.com/p/CvN0zYirGdv/?img_index=1',src:'/images/instragram-5.jpg'},
 ]
 
 export default function SectionInstagram() {

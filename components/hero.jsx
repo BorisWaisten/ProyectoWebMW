@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section className="h-screen  flex flex-col justify-center items-center text-center px-6 bg-[url('/hero.jpg')]">
         <Image
-          src="/logo.jpg"
+          src="/images/logo.jpg"
           alt="Estudio Logo"
           width={120}
           height={120}
