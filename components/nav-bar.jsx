@@ -1,22 +1,25 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState} from 'react'
+import { usePathname,useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { useAppContext } from '@/context/app-context'
 import Image from 'next/image'
 import ScaleInWrapper from './animations/scale-in-wrapper'
 
 const navItems = [
-  { name: 'Home', path: '/' },
-  { name: 'About Us', path: '/about-us' },
-  { name: 'Services', path: '/services' },
-  { name: 'Our Work', path: '/our-work' },
-  { name: 'Contact', path: '/contact' },
+  { name: 'Inicio', path: '/home' },
+  { name: 'Trabajos', path: '/our-work' },
+  { name: 'Servicios', path: '/services' },
+  { name: 'Sobre Mi', path: '/about-us' },
+  { name: 'Contacto', path: '/contact' },
 ]
 
 export default function Navbar() {
   const { menuOpen, setMenuOpen } = useAppContext()
   const [isTop, setIsTop] = useState(true)
+  const pathname = usePathname()
+  const router = useRouter()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +29,18 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+
+  function handleClickHome() {
+    setMenuOpen(false)
+    if(pathname === '/home' || pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }else {
+      router.push('/home')
+    }
+
+    
+  }
 
   return (
       <header
@@ -45,6 +60,7 @@ export default function Navbar() {
               height={50}
               priority
               className="rounded-full object-cover"
+              onClick={handleClickHome}
             />
           </ScaleInWrapper>
           <ScaleInWrapper delay={0.3}>
@@ -79,7 +95,7 @@ export default function Navbar() {
       </nav>
 
       <div
-        className={`md:hidden bg-white text-gray-800 px-6 transition-all duration-500 overflow-hidden ${
+        className={`md:hidden bg-[rgb(var(--color-bg))] text-[rgb(var(--color-text))]  px-6 transition-all duration-500 overflow-hidden ${
           menuOpen ? 'max-h-96 pt-4' : 'max-h-0'
         }`}
       >

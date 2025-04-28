@@ -7,7 +7,7 @@ import FadeInWrapper from '@/components/animations/fade-in-wrapper'
 
 export default function PortfolioPage() {
   return (
-    <main className="py-20 px-6 text-[rgb(var(--color-text))] bg-[rgb(var(--color-bg))] font-serif">
+    <main className="py-20 px-6 min-h-screen overflow-hidden bg-[rgb(var(--color-bg))] text-[rgb(var(--color-text))] ">
       <h1 className="text-4xl font-bold mb-12 text-center">Nuestro trabajo</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">

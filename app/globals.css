@@ -12,6 +12,5 @@
 }
 
 body {
-  @apply bg-[rgb(var(--color-bg))] text-[rgb(var(--color-text))] font-serif;
   font-family: 'Cormorant Garamond', serif;
 }

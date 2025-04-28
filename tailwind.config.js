@@ -2,9 +2,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
-      "./app/**/*.{js,ts,jsx,tsx}",
-      "./components/**/*.{js,ts,jsx,tsx}",
-      "./styles/**/*.{css}", // si tus CSS están ahí
+      "./app/**/*.{js,ts,jsx,tsx,css}",
+      "./components/**/*.{js,ts,jsx,tsx,css}",
+      "./styles/**/*.{css}", 
       "./**/*.{html,js,jsx,ts,tsx}"
     ],
     theme: {

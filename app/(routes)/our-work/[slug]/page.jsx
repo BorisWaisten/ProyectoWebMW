@@ -6,9 +6,9 @@ export default function ProjectPage({ params }) {
   const work = works.find(w => w.slug === params.slug)
 
   if (!work) return notFound()
-
+ 
   return (
-    <main className="py-20 px-6 font-serif text-[rgb(var(--color-text))] bg-[rgb(var(--color-bg))]">
+    <main className="py-20 px-6 min-h-screen overflow-hidden bg-[rgb(var(--color-bg))] text-[rgb(var(--color-text))] ">
       <div className="max-w-4xl mx-auto text-center">
         <h1 className="text-4xl font-bold mb-4">{work.title}</h1>
         <p className="mb-10 text-lg">{work.description}</p>

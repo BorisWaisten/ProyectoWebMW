@@ -2,18 +2,23 @@
 
 import FadeInWrapper from '@/components/animations/fade-in-wrapper'
 import RevealWrapper from '@/components/animations/reveal-wrapper'
-import SlideUpWrapper from '@/components/animations/slide-up-wrapper'
 import Hero from '@/components/hero'
 import SectionBranding from '@/components/section/section-branding'
 import SectionInfo from '@/components/section/section-info'
 import SectionInstagram from '@/components/section/section-instragram'
+
+const infoHero = {
+  title: "Nosotras somos el estudio",
+  subtitle: "Un equipo creativo con alma",
+  description: "Desde el concepto hasta la ejecución, cada paso está guiado por la sensibilidad estética y el detalle técnico.",
+  image: "/images/hero.jpg"
+}
+
 export default function Home() {
   return (
-    <main className="bg-[rgb(var(--color-bg))] text-[rgb(var(--color-text))] font-serif ">
+    <main className="min-h-screen overflow-hidden bg-[rgb(var(--color-bg))] text-[rgb(var(--color-text))]">
       <div className='mb-10'>
-        <FadeInWrapper>
-          <Hero />
-        </FadeInWrapper>
+        <Hero image={infoHero.image} title={infoHero.title} description={infoHero.description}/>
       </div>
       <RevealWrapper delay={0.3}>  
         <SectionBranding

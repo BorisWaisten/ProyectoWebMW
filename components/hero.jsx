@@ -1,24 +1,22 @@
 'use client'
 
 import Image from 'next/image'
+import FadeInWrapper from './animations/fade-in-wrapper'
 
-export default function Hero() {
+export default function Hero({ title, description, image }) {
   return (
-    <section className="h-screen  flex flex-col justify-center items-center text-center px-6 bg-[url('/hero.jpg')]">
-        <Image
-          src="/images/logo.jpg"
-          alt="Estudio Logo"
-          width={120}
-          height={120}
-          priority
-          className="mb-6"
-        />
+    <section 
+      className="h-screen flex flex-col justify-center items-center text-white text-center px-6"
+      style={{ backgroundImage: `url(${image})` }}
+    >      
+      <FadeInWrapper delay={0.3}>
       <h1 className="text-5xl md:text-7xl font-bold tracking-wide mb-4">
-        Estudio de Diseño
+        {title}
       </h1>
       <p className="text-lg md:text-2xl text-primary max-w-2xl">
-        Creamos marcas con propósito, sensibilidad y carácter.
+        {description}
       </p>
+      </FadeInWrapper>
     </section>
   )
 }
