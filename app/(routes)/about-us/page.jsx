@@ -3,7 +3,7 @@ import SectionValues from "@/components/section/section-values"
 
 export default function AboutUs() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[rgb(var(--color-bg))] text-[rgb(var(--color-text))]  flex flex-col gap-20">
+    <section className="flex flex-col gap-20">
       <SectionStory 
         title="Nuestra Historia"
         image="/images/about.jpg"
@@ -14,6 +14,6 @@ export default function AboutUs() {
       />
 
       <SectionValues />
-    </main>
+    </section>
   )
 }

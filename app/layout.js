@@ -17,15 +17,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body className=''>
-        <AppRouterCacheProvider>
+    <body className="min-h-screen flex flex-col">
+    <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <CssBaseline />
             <AppProvider>
               <Navbar />
-              {children}
+              <main className="flex-grow min-h-screen overflow-hidden bg-[rgb(var(--color-bg))] text-[rgb(var(--color-text))]">
+                {children}
+              </main>
               <Footer />
-              <Analytics />
             </AppProvider>
           </ThemeProvider>
         </AppRouterCacheProvider>

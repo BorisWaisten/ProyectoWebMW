@@ -16,7 +16,7 @@ const infoHero = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[rgb(var(--color-bg))] text-[rgb(var(--color-text))]">
+    <section >
       <div className='mb-10'>
         <Hero image={infoHero.image} title={infoHero.title} description={infoHero.description}/>
       </div>
@@ -51,6 +51,6 @@ export default function Home() {
           image="/images/about.jpg"
         />
         <SectionInstagram />
-   </main>
+   </section>
   )
 }

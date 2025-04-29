@@ -26,7 +26,7 @@ export default function ServicesSection() {
   };
 
   return (
-    <section className="min-h-screen overflow-hidden bg-[rgb(var(--color-bg))] text-[rgb(var(--color-text))] mx-auto">
+    <section className="mx-auto">
         <Hero
           image="/images/hero-services.jpg"
           title="Servicios"
