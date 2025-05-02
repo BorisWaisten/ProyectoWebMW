@@ -2,10 +2,10 @@
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter'
 import { ThemeProvider } from '@mui/material/styles'
 import { CssBaseline } from '@mui/material'
-import { Analytics } from '@mui/icons-material'
 import theme from '@/theme/theme'
 import './globals.css'
 import { AppProvider } from '@/context/app-context'
+import WhatsAppButton from '@/components/wsp-button'
 import Navbar from '@/components/nav-bar'
 import Footer from '@/components/footer'
 
@@ -26,6 +26,7 @@ export default function RootLayout({ children }) {
               <main className="flex-grow min-h-screen overflow-hidden bg-[rgb(var(--color-bg))] text-[rgb(var(--color-text))]">
                 {children}
               </main>
+              <WhatsAppButton />
               <Footer />
             </AppProvider>
           </ThemeProvider>
