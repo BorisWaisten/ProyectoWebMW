@@ -40,7 +40,7 @@ export default function SectionContact() {
         />
         <button
           type="submit"
-          class="mx-auto py-2 sm:py-0 px-4 mb-4 sm:mb-0 sm:px-10 rounded-md font-semibold border-[1.5px] border-[rgb(var(--color-secondary))] bg-[rgb(var(--color-text))] text-white active:shadow-lg duration-300 active:bg-blue-500 sm:hover:scale-105"
+          className="mx-auto py-2 sm:py-0 px-4 mb-4 sm:mb-0 sm:px-10 rounded-md font-semibold border-[1.5px] border-[rgb(var(--color-secondary))] bg-[rgb(var(--color-text))] text-white active:shadow-lg duration-300 active:bg-blue-500 sm:hover:scale-105"
         >
           Enviar mensaje
         </button>
