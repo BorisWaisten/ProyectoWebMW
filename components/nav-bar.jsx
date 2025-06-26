@@ -10,7 +10,6 @@ import ScaleInWrapper from './animations/scale-in-wrapper'
 const navItems = [
   { name: 'Inicio', path: '/home' },
   { name: 'Trabajos', path: '/our-work' },
-  { name: 'Servicios', path: '/services' },
   { name: 'Sobre Mi', path: '/about-us' },
   { name: 'Contacto', path: '/contact' },
 ]
@@ -50,23 +49,18 @@ export default function Navbar() {
             : 'ease-in-out  bg-[rgb(var(--color-bg))] shadow-md shadow-gray-600/50'
         }`}
       >
-      <nav className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center text-gray-800">
+      <nav className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center ">
         <div className="flex items-center gap-4">
           <ScaleInWrapper delay={0.3}>
             <Image
-              src="/images/logo.jpg"
+              src="/images/LOGOMARTU.png"
               alt="Logo"
               width={50}
               height={50}
               priority
-              className="rounded-full object-cover"
+              className="scale-[2] rounded-full object-cover"
               onClick={handleClickHome}
             />
-          </ScaleInWrapper>
-          <ScaleInWrapper delay={0.3}>
-            <h1 className="text-2xl font-semibold tracking-wide text-[rgb(var(--color-primary))]">
-              Estudio
-            </h1>
           </ScaleInWrapper>
         </div>
 
@@ -76,7 +70,7 @@ export default function Navbar() {
               <li>
                 <Link
                   href={item.path}
-                  className="hover:text-[rgb(var(--color-primary))] transition-colors duration-300"
+                  className="hover:text-gray-800 text-[rgb(var(--color-primary))] transition-colors duration-300"
                 >
                   {item.name}
                 </Link>

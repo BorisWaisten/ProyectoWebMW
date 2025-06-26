@@ -22,7 +22,7 @@ export default function Section({ title, description, image, reverse = false }) 
             width={600}
             height={400}
             priority
-            className="rounded-2xl shadow-lg h-[70vh] object-cover"
+            className="rounded-2xl shadow-lg  object-contain"
           />
         </div>
     </section>
