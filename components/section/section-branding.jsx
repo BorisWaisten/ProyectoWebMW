@@ -11,8 +11,8 @@ export default function Section({ title, description, image, reverse = false }) 
       )}
     >
         <div className="flex-1">
-          <h2 className="text-4xl font-bold mb-4">{title}</h2>
-          <p className="text-lg">{description}</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
+          <p className="text-base md:text-lg w-[40%] md:w-full max-w-3xl mx-auto">{description}</p>
         
         </div>
         <div className="flex-1">  
@@ -22,7 +22,7 @@ export default function Section({ title, description, image, reverse = false }) 
             width={600}
             height={400}
             priority
-            className="rounded-2xl shadow-lg  object-contain"
+            className="rounded-2xl shadow-lg  max-w-xs md:max-w-full object-contain"
           />
         </div>
     </section>

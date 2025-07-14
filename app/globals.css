@@ -9,8 +9,128 @@
   --color-terciary: 255 160 122; /* coral */
   --color-bg: 250 228 225; /* fondo suave claro */
   --color-text: 51 51 51; /* texto gris oscuro */
+  --brand-text: #222;
 }
 
 body {
   font-family: 'Cormorant Garamond', serif;
+  color: var(--brand-text);
+}
+
+.cool {
+  font-weight: bold;
+  max-width: 48rem;
+}
+.cool span {
+  color: #fff;
+  display: inline-block;
+  position: relative;
+  transition: color 0.3s;
+}
+.cool span::before,
+.cool span::after {
+  content: attr(data-text);
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  speak: none;
+  opacity: 0.7;
+}
+.cool span::before {
+  animation: cool-max-height 0.4s cubic-bezier(0.61, 1, 0.88, 1) 1 normal both;
+  color: #222;
+}
+.cool span::after {
+  animation: cool-max-width 0.7s cubic-bezier(0.61, 1, 0.88, 1) 1 normal both;
+  color: #444;
+}
+@keyframes cool-max-width {
+  from { max-width: 0; }
+  to { max-width: 100%; }
+}
+@keyframes cool-max-height {
+  from { max-height: 0; }
+  to { max-height: 100%; }
+}
+
+/* Split Text Animation */
+.split-text-container {
+    display: flex;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    overflow: hidden;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-part {
+    display: inline-block;
+    position: relative;
+    transform: translateX(0);
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    white-space: nowrap;
+}
+
+.text-part.left {
+    transform: translateX(-200%);
+    animation-name: slide-in-left;
+}
+
+.text-part.right {
+    transform: translateX(200%);
+    animation-name: slide-in-right;
+}
+
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-right {
+    0% {
+        transform: translateX(200%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Apple-style Service Cards */
+.service-card {
+  padding: 2rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Apple-style typography adjustments */
+.split-text-container {
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+/* Enhanced parallax effect */
+.parallax-bg {
+  will-change: transform;
 }

@@ -9,11 +9,11 @@ export default function SectionInfo({ title, subtitle, description, image }) {
     <section className="px-6 md:px-20 py-20 flex flex-col md:flex-row items-center gap-12">
       <SlideLeftWrapper delay={0.3}>
         <div className="flex-1 text-center md:text-left space-y-4">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight">
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight text-[var(--brand-text)]">
             {title}
           </h2>
-          <p className="text-lg text-[rgb(var(--color-text))]/80 italic">{subtitle}</p>
-          <p className="max-w-xl text-[rgb(var(--color-text))]">{description}</p>
+          <p className="text-lg text-[var(--brand-text)]/80 italic">{subtitle}</p>
+          <p className="max-w-xl text-[var(--brand-text)]">{description}</p>
         </div>
       </SlideLeftWrapper>
       {image && (
