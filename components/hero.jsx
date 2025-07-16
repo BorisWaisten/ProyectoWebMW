@@ -75,15 +75,19 @@ export default function Hero({ title, description, image }) {
           }}
         >
           {/* Primer renglón - Waisten Martina */}
-          <div className="hero-split-text text-4xl md:text-7xl lg:text-8xl leading-tight mb-4">
+          <div className="hero-split-text text-5xl md:text-7xl lg:text-8xl leading-tight ">
             <span className="text-part left font-filosofia">Waisten</span>
             <span className="text-part right font-filosofia">Martina</span>
           </div>
           
           {/* Segundo renglón - diseñadora gráfica */}
-          <div className="hero-split-text text-xl md:text-3xl lg:text-4xl leading-tight">
-            <span className="text-part left font-century-gothic">diseñadora</span>
-            <span className="text-part right font-century-gothic">gráfica</span>
+          <div className="hero-split-text text-base uppercase md:text-xl lg:text-2xl leading-tight">
+            <span className="text-part left font-century-gothic">Diseño</span>
+            <span className="text-part right font-century-gothic">Gráfico y</span>
+          </div>
+          <div className="hero-split-text text-base uppercase md:text-xl lg:text-2xl leading-tight">
+            <span className="text-part left font-century-gothic">Comunicación</span>
+            <span className="text-part right font-century-gothic">Visual</span>
           </div>
         </motion.div>
       </div>
