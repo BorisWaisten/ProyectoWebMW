@@ -67,15 +67,24 @@ export default function Hero({ title, description, image }) {
       {/* Hero Section */}
       <div className="h-screen flex flex-col justify-center items-center text-center px-6 relative">
         <motion.div
-          className="split-text-container text-4xl md:text-7xl lg:text-8xl leading-tight"
+          className="flex flex-col items-center"
           style={{
             scale: titleScale,
             opacity: titleOpacity,
             y: titleY
           }}
         >
-          <span className="text-part left">WAISTEN</span>
-          <span className="text-part right">DISEÑO</span>
+          {/* Primer renglón - Waisten Martina */}
+          <div className="hero-split-text text-4xl md:text-7xl lg:text-8xl leading-tight mb-4">
+            <span className="text-part left font-filosofia">Waisten</span>
+            <span className="text-part right font-filosofia">Martina</span>
+          </div>
+          
+          {/* Segundo renglón - diseñadora gráfica */}
+          <div className="hero-split-text text-xl md:text-3xl lg:text-4xl leading-tight">
+            <span className="text-part left font-century-gothic">diseñadora</span>
+            <span className="text-part right font-century-gothic">gráfica</span>
+          </div>
         </motion.div>
       </div>
 

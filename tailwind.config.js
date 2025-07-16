@@ -9,6 +9,10 @@ export default {
     ],
     theme: {
       extend: {
+        fontFamily: {
+          'filosofia': ['Filosofia', 'serif'],
+          'century-gothic': ['Century Gothic', 'sans-serif'],
+        },
         colors: {
           primary: 'rgb(var(--color-primary) / <alpha-value>)',
           secondary: 'rgb(var(--color-secondary) / <alpha-value>)',

@@ -3,6 +3,32 @@
 @import 'slick-carousel/slick/slick.css';
 @import 'slick-carousel/slick/slick-theme.css';
 
+/* Filosofia Font */
+@font-face {
+  font-family: 'Filosofia';
+  src: url('/Filosofia Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Century Gothic Font */
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('/centurygothic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('/centurygothic_bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --color-primary: 250 128 114; /* salmon */
   --color-secondary: 233 150 122; /* peach */
@@ -58,6 +84,17 @@ body {
     display: flex;
     font-weight: bold;
     text-transform: uppercase;
+    color: var(--color-primary);
+    overflow: hidden;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hero Split Text - Sin transformación a mayúsculas */
+.hero-split-text {
+    display: flex;
+    font-weight: bold;
     color: var(--color-primary);
     overflow: hidden;
     gap: 0.5rem;
