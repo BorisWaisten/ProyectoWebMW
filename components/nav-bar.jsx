@@ -79,7 +79,7 @@ export default function Navbar() {
         className={`fixed w-full z-50 transition-all duration-300 font-serif ${
           isTop
             ? 'bg-transparent backdrop-blur-none'
-            : 'ease-in-out  bg-[rgb(var(--color-bg))] shadow-md shadow-gray-600/50'
+            : 'ease-in-out bg-white/8 backdrop-blur-[1.5px]'
         }`}
       >
       <nav className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center ">
@@ -110,7 +110,7 @@ export default function Navbar() {
                     <span className="ml-1">▼</span>
                   </button>
                   <ul
-                    className="absolute left-0  w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all z-50"
+                    className="absolute left-0 w-48 bg-white/8 backdrop-blur-[1.5px] border border-white/20 rounded-lg shadow-sm opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all z-50"
                     onMouseEnter={e => e.currentTarget.classList.add('pointer-events-auto')}
                     onMouseLeave={e => e.currentTarget.classList.remove('pointer-events-auto')}
                   >
@@ -118,7 +118,7 @@ export default function Navbar() {
                       <li key={subitem.path}>
                         <Link
                           href={subitem.path}
-                          className="block px-6 py-3 text-gray-900 hover:bg-gray-100 hover:text-[rgb(var(--color-primary))] transition-colors"
+                          className="block px-6 py-3 text-gray-900 hover:text-[rgb(var(--color-primary))] transition-colors"
                         >
                           {subitem.name}
                         </Link>
@@ -155,7 +155,7 @@ export default function Navbar() {
       <div className="md:hidden absolute top-full left-0 right-0 h-1 bg-transparent pointer-events-none" />
 
       <div
-        className={`md:hidden bg-[rgb(var(--color-bg))] text-[rgb(var(--color-text))] px-6 transition-all duration-500 overflow-hidden shadow-lg -mt-1 ${
+        className={`md:hidden bg-white/6 backdrop-blur-[0.5px] border-white/15 text-gray-900 px-6 transition-all duration-500 overflow-hidden shadow-sm -mt-1 ${
           menuOpen ? 'max-h-96 pt-4 pb-4' : 'max-h-0'
         }`}
       >

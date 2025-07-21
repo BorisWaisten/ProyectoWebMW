@@ -29,7 +29,7 @@ export default function Hero({ title, description, image }) {
 
   // Background image parallax effect
   const backgroundY = useTransform(scrollYProgress, [0, 1], [0, -200]);
-  const backgroundOpacity = useTransform(scrollYProgress, [0, 0.3], [0.3, 0.1]);
+  const backgroundOpacity = useTransform(scrollYProgress, [0, 0.3], [.8, .3]);
   
   // Title animations
   const titleScale = useTransform(scrollYProgress, [0, 0.4, 0.7, 1], isMobile ? [1, 1, 0.9, 0.8] : [1.2, 1.05, 0.95, 0.85]);
@@ -44,7 +44,7 @@ export default function Hero({ title, description, image }) {
   return (
     <section 
       ref={containerRef}
-      className="relative min-h-screen"
+      className="relative "
       data-hero-section
     >
       {/* Background Image with Parallax */}
@@ -63,9 +63,9 @@ export default function Hero({ title, description, image }) {
           priority
         />
       </motion.div>
-
+      
       {/* Hero Section */}
-      <div className="h-screen flex flex-col justify-center items-center text-center px-6 relative">
+      <div className="h-[600px] flex flex-col justify-center items-center text-center px-6 relative">
         <motion.div
           className="flex flex-col items-center"
           style={{
@@ -82,19 +82,15 @@ export default function Hero({ title, description, image }) {
           
           {/* Segundo renglón - diseñadora gráfica */}
           <div className="hero-split-text text-base uppercase md:text-xl lg:text-2xl leading-tight">
-            <span className="text-part left font-century-gothic">Diseño</span>
-            <span className="text-part right font-century-gothic">Gráfico y</span>
-          </div>
-          <div className="hero-split-text text-base uppercase md:text-xl lg:text-2xl leading-tight">
-            <span className="text-part left font-century-gothic">Comunicación</span>
-            <span className="text-part right font-century-gothic">Visual</span>
+            <span className="text-part left font-century-gothic">Diseño Gráfico</span>
+            <span className="text-part right font-century-gothic">y Comunicación Visual</span>
           </div>
         </motion.div>
       </div>
 
       {/* Description Section */}
       <motion.div 
-        className="min-h-screen flex flex-col justify-center items-center text-center px-6"
+        className="h-[650px] flex flex-col justify-center items-center text-center px-6"
         style={{
           opacity: descriptionOpacity,
           scale: descriptionScale,

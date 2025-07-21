@@ -13,7 +13,7 @@ const infoHero = {
   title: "Diseño Gráfico",
   subtitle: "Creo identidades visuales que cuentan tu historia",
   description: "Diseñadora gráfica especializada en branding, identidad visual y diseño web. Soluciones únicas que reflejan la esencia de tu proyecto.",
-  image: "/images/hero2.jpg"
+  image: "/images/hero.jpg"
 }
 
 const services = [

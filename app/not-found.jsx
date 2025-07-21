@@ -38,7 +38,7 @@ export default function NotFound() {
         onClick={() => router.push('/home')}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="bg-black text-white px-6 py-3 rounded-lg font-medium transition"
+        className="bg-white/8 backdrop-blur-sm border border-white/50 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/20 hover:border-white/80 transition-all duration-300 shadow-sm"
       >
         Volver al inicio
       </motion.button>

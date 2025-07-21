@@ -45,7 +45,7 @@ export default function Card() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -10 }}
             >
-              <div className="relative overflow-hidden rounded-lg bg-gray-100">
+              <div className="relative overflow-hidden rounded-lg bg-white/5 backdrop-blur-sm border border-white/50 shadow-sm">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -100,7 +100,7 @@ export default function Card() {
           >
             <Link 
               href="/contact"
-              className="inline-block bg-[rgb(var(--color-primary))] text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-[rgb(var(--color-secondary))] transition-colors duration-300"
+              className="inline-block bg-white/8 backdrop-blur-sm border border-white/50 px-8 py-4 rounded-full text-lg font-medium hover:bg-white/20 hover:border-white/80 transition-all duration-300 shadow-sm"
             >
               Comenzar Proyecto
             </Link>

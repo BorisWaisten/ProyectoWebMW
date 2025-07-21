@@ -14,20 +14,22 @@
   .footer-socials-container li a {
     width: 50px;
     height: 50px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    border: 2px solid #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     z-index: 1;
+    transition: all 0.3s ease;
   }
   
   .footer-socials-container li a .icon {
     font-size: 24px;
-    color: #302f2f;
+    color: rgba(48, 47, 47, 0.8);
     transition: 0.5s;
     z-index: 3;
   }
@@ -36,6 +38,12 @@
   .footer-socials-container li a:hover .icon {
     color: #fff;
     transform: rotateY(360deg);
+  }
+
+  .footer-socials-container li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
   }
   
   .footer-socials-container li a::before {
@@ -47,6 +55,7 @@
     height: 100%;
     transition: 0.5s;
     z-index: 2;
+    border-radius: 50%;
   }
   
   .footer-socials-container li a:hover::before {

@@ -12,7 +12,7 @@ export default function Button({
   size = "md",
   disabled = false 
 }) {
-  const baseClasses = "inline-block font-medium transition-all duration-300 border-2 rounded-full relative";
+  const baseClasses = "inline-block font-medium transition-all duration-300 rounded-full relative bg-white/8 backdrop-blur-[1.5px] border border-white/50 hover:bg-white/20 hover:border-white/80 shadow-sm";
   
   const sizeClasses = {
     sm: "px-6 py-2 text-sm",
@@ -22,7 +22,7 @@ export default function Button({
   };
 
   const variantClasses = {
-    style5: "btn-style5"
+    style5: "text-gray-900"
   };
 
   const buttonClasses = `${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${className}`;
