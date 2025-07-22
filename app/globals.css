@@ -22,7 +22,7 @@
 }
 
 @font-face {
-  font-family: 'Century Gothic';
+  font-family: 'Century Gothic Bold';
   src: url('/centurygothic_bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
@@ -96,10 +96,43 @@ body {
     display: flex;
     color: var(--color-primary);
     overflow: hidden;
+    font-family: 'Century Gothic ';
     gap: 0.3rem;
     justify-content: center;
     align-items: center;
 }
+
+.hero-split-text2 {
+  display: flex;
+  color: var(--color-primary);
+  overflow: hidden;
+  font-family: 'Century Gothic Bold';
+  gap: 0.3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.text-part2 {
+  display: inline-block;
+  position: relative;
+  transform: translateX(0);
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  white-space: nowrap;
+}
+
+.text-part2.left {
+  transform: translateX(-200%);
+  animation-name: slide-in-left;
+}
+
+.text-part2.right {
+  transform: translateX(200%);
+  animation-name: slide-in-right;
+}
+
 
 .text-part {
     display: inline-block;

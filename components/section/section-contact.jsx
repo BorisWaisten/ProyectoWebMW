@@ -12,8 +12,8 @@ export default function SectionContact() {
         className="max-w-2xl mx-auto text-center"
       >
         <h2 className="text-4xl sm:text-5xl font-bold mb-4 drop-shadow-lg">Contacto</h2>
-        <p className="mb-10 text-lg sm:text-xl  drop-shadow-md">
-          Si tienes alguna pregunta o sugerencia, no dudes en contactarnos. Estaremos encantados de ayudarte.
+        <p className="mb-10 text-lg sm:text-xl text-balance drop-shadow-md">
+          Si tienes alguna pregunta o sugerencia, no dudes en contactarme. Estaré encantada de ayudarte.
         </p>
       </motion.div>
 

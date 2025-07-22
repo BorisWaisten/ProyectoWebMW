@@ -12,6 +12,7 @@ export default {
         fontFamily: {
           'filosofia': ['Filosofia', 'serif'],
           'century-gothic': ['Century Gothic', 'sans-serif'],
+          'century-gothic-bold': ['Century Gothic Bold', 'sans-serif'],
         },
         colors: {
           primary: 'rgb(var(--color-primary) / <alpha-value>)',

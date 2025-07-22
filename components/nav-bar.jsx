@@ -8,22 +8,14 @@ import Image from 'next/image'
 import ScaleInWrapper from './animations/scale-in-wrapper'
 
 const navItems = [
-  {
-    name: 'diseño gráfico',
-    dropdown: [
-      { name: 'home gráfico', path: '/home' },
-      { name: 'identidad visual', path: '/branding' },
-      { name: 'diseño web', path: '/design-web' },
-      { name: 'tarjetas', path: '/card' },
-    ],
-  },
+  { name: 'home', path: '/home' },
+  { name: 'diseño gráfico', path: '/branding' },
   { name: 'contacto', path: '/contact' },
 ]
 
 export default function Navbar() {
   const { menuOpen, setMenuOpen } = useAppContext()
   const [isTop, setIsTop] = useState(true)
-  const [openSubmenu, setOpenSubmenu] = useState(null)
   const pathname = usePathname()
   const router = useRouter()
 
@@ -42,7 +34,6 @@ export default function Navbar() {
       const navbar = document.querySelector('header')
       if (menuOpen && navbar && !navbar.contains(event.target)) {
         setMenuOpen(false)
-        setOpenSubmenu(null)
       }
     }
 
@@ -55,14 +46,6 @@ export default function Navbar() {
     }
   }, [menuOpen, setMenuOpen])
 
-  // Cerrar submenu cuando se cierra el menú principal
-  useEffect(() => {
-    if (!menuOpen) {
-      setOpenSubmenu(null)
-    }
-  }, [menuOpen])
-
-
   function handleClickHome() {
     setMenuOpen(false)
     if(pathname === '/home' || pathname === '/') {
@@ -70,8 +53,6 @@ export default function Navbar() {
     }else {
       router.push('/home')
     }
-
-    
   }
 
   return (
@@ -79,7 +60,7 @@ export default function Navbar() {
         className={`fixed w-full z-50 transition-all duration-300 font-serif ${
           isTop
             ? 'bg-transparent backdrop-blur-none'
-            : 'ease-in-out bg-white/8 backdrop-blur-[1.5px]'
+            : 'ease-in-out bg-white/8 backdrop-blur-[.5px]'
         }`}
       >
       <nav className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center ">
@@ -100,42 +81,14 @@ export default function Navbar() {
         <ul className="hidden md:flex gap-10 text-lg">
           {navItems.map((item, idx) => (
             <ScaleInWrapper key={item.name} delay={0.3}>
-              {item.dropdown ? (
-                <li className="relative group">
-                  <button
-                    className="hover:text-gray-800 text-[rgb(var(--color-primary))] transition-colors duration-300 flex items-center gap-1"
-                    tabIndex={0}
-                  >
-                    {item.name}
-                    <span className="ml-1">▼</span>
-                  </button>
-                  <ul
-                    className="absolute left-0 w-48 bg-white/8 backdrop-blur-[1.5px] border border-white/20 rounded-lg shadow-sm opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all z-50"
-                    onMouseEnter={e => e.currentTarget.classList.add('pointer-events-auto')}
-                    onMouseLeave={e => e.currentTarget.classList.remove('pointer-events-auto')}
-                  >
-                    {item.dropdown.map((subitem) => (
-                      <li key={subitem.path}>
-                        <Link
-                          href={subitem.path}
-                          className="block px-6 py-3 text-gray-900 hover:text-[rgb(var(--color-primary))] transition-colors"
-                        >
-                          {subitem.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              ) : (
-                <li>
-                  <Link
-                    href={item.path}
-                    className="hover:text-gray-800 text-[rgb(var(--color-primary))] transition-colors duration-300"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              )}
+              <li>
+                <Link
+                  href={item.path}
+                  className="hover:text-[rgb(var(--color-primary))] text-gray-800 transition-colors duration-300 px-4 py-2 rounded-lg  bg-white/8 backdrop-blur-sm border border-white/20 hover:bg-white/20 hover:border-white/40"
+                >
+                  {item.name}
+                </Link>
+              </li>
             </ScaleInWrapper>
           ))}
         </ul>
@@ -161,51 +114,17 @@ export default function Navbar() {
       >
         <ul className="flex flex-col gap-6 text-lg">
           {navItems.map((item) => (
-            item.dropdown ? (
-              <li key={item.name} className="relative">
-                <button 
-                  className="w-full text-left hover:text-[rgb(var(--color-primary))] flex items-center justify-between py-2 transition-colors duration-300" 
-                  tabIndex={0}
-                  onClick={() => setOpenSubmenu(openSubmenu === item.name ? null : item.name)}
-                >
-                  {item.name}
-                  <span className={`ml-1 transition-transform duration-300 ${openSubmenu === item.name ? 'rotate-180' : ''}`}>▼</span>
-                </button>
-                <ul 
-                  className={`pl-4 mt-2 overflow-hidden transition-all duration-300 ${
-                    openSubmenu === item.name ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
-                  }`}
-                >
-                  {item.dropdown.map((subitem) => (
-                    <li key={subitem.path}>
-                      <Link
-                        href={subitem.path}
-                        className="block py-3 hover:text-[rgb(var(--color-primary))] transition-colors duration-300 border-l-2 border-transparent hover:border-[rgb(var(--color-primary))] pl-4"
-                        onClick={() => {
-                          setMenuOpen(false)
-                          setOpenSubmenu(null)
-                        }}
-                      >
-                        {subitem.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            ) : (
-              <li key={item.path}>
-                <Link
-                  href={item.path}
-                  className="block py-2 hover:text-[rgb(var(--color-primary))] transition-colors duration-300"
-                  onClick={() => {
-                    setMenuOpen(false)
-                    setOpenSubmenu(null)
-                  }}
-                >
-                  {item.name}
-                </Link>
-              </li>
-            )
+            <li key={item.path}>
+              <Link
+                href={item.path}
+                className="block py-2 hover:text-[rgb(var(--color-primary))] transition-colors duration-300"
+                onClick={() => {
+                  setMenuOpen(false)
+                }}
+              >
+                {item.name}
+              </Link>
+            </li>
           ))}
         </ul>
       </div>

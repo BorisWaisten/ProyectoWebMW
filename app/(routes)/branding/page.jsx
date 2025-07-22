@@ -4,7 +4,8 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const brandingProjects = [
+const allProjects = [
+  // Branding Corporativo
   {
     id: 0,
     title: "Odontología Andrea",
@@ -33,6 +34,25 @@ const brandingProjects = [
     link: "https://www.behance.net/gallery/205539953/Papeleria-Fulanitas"
   },
   {
+    id: 8,
+    title: "VMC Distribuciones",
+    category: "Branding Corporativo",
+    image: "/images/branding-16.webp",
+    description: "Identidad corporativa para empresa de distribución",
+    year: "2023",
+    link: "https://www.behance.net/gallery/176236291/Identidad-Visual-VMC-Distribuciones"
+  },
+  {
+    id: 12,
+    title: "Calma Chica",
+    category: "Tarjetas y Papelería",
+    image: "/images/branding-14.png",
+    description: "Identidad visual y papelería",
+    year: "2023",
+    link: "https://www.behance.net/gallery/125582703/Calma-Chica-Identidad-Visual"
+  },
+  // Branding Gastronómico
+  {
     id: 3,
     title: "Date un Gusto",
     category: "Branding Gastronómico",
@@ -49,29 +69,31 @@ const brandingProjects = [
     description: "Identidad visual para pastelería artesanal",
     year: "2023",
     link: "https://www.behance.net/gallery/194614613/Diseno-de-Identidad-Visual-Lucia-Pasteleria"
+  },  
+  {
+    id: 9,
+    title: "Martu & Gino",
+    category: "Diseño Web",
+    image: "/images/branding-12.jpeg",
+    description: "Sitio web responsivo para empresa de servicios",
+    year: "2024",
+    tech: ["Next.js", "Tailwind", "Framer Motion"],
+    link: "https://martuygino.vercel.app/"
   },
   {
-    id: 8,
-    title: "VMC Distribuciones",
-    category: "Branding Empresarial",
-    image: "/images/branding-4.webp",
-    description: "Identidad corporativa para empresa de distribución",
-    year: "2023",
-    link: "https://www.behance.net/gallery/176236291/Identidad-Visual-VMC-Distribuciones"
-  },
-  {
-    id: 5,
-    title: "Bourlot Implementos Avícolas",
-    category: "Branding Empresarial",
-    image: "/images/branding-5.webp",
-    description: "Diseño de marca para empresa de implementos avícolas",
-    year: "2023",
-    link: "https://www.behance.net/gallery/186199319/Cambio-de-Imagen"
+    id: 10,
+    title: "Shirley & Diego",
+    category: "Diseño Web",
+    image: "/images/branding-11.jpeg",
+    description: "Tienda online con diseño moderno y funcional",
+    year: "2024",
+    tech: ["Next.js", "Tailwind", "Framer Motion"],
+    link: "https://boda-syd.vercel.app/"
   },
   {
     id: 6,
     title: "Lotus",
-    category: "Branding Elegante",
+    category: "Branding Corporativo",
     image: "/images/branding-6.webp",
     description: "Identidad visual minimalista y elegante",
     year: "2023",
@@ -79,9 +101,11 @@ const brandingProjects = [
   },
 ]
 
+
 export default function Branding() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen sm:pt-14 ">
+
       {/* Projects Grid */}
       <section className="max-w-7xl mx-auto px-6 py-30">
         <motion.div 
@@ -90,7 +114,7 @@ export default function Branding() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          {brandingProjects.map((project, index) => (
+          {allProjects.map((project, index) => (
             <motion.div
               key={project.id}
               className="group cursor-pointer"
@@ -127,24 +151,9 @@ export default function Branding() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gray-50 py-20">
+      <section className="pb-10">
         <div className="max-w-4xl mx-auto text-center px-6">
-          <motion.h2 
-            className="text-3xl md:text-4xl font-light text-gray-900 mb-6"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            ¿Listo para crear tu identidad visual?
-          </motion.h2>
-          <motion.p 
-            className="text-lg text-gray-600 mb-8"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Transformemos tu marca en una experiencia visual memorable
-          </motion.p>
+          
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

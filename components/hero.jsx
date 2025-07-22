@@ -37,7 +37,7 @@ export default function Hero({ title, description, image }) {
   const titleY = useTransform(scrollYProgress, [0, 0.5], [0, -50]);
   
   // Description section animations
-  const descriptionOpacity = useTransform(scrollYProgress, [0.3, 0.5, 0.8], [0, 1, 1]);
+  const descriptionOpacity = useTransform(scrollYProgress, [0.2, 0.3, 0.8], [0, 1, 1]);
   const descriptionScale = useTransform(scrollYProgress, [0.3, 0.5], isMobile ? [1, 1] : [1.05, 1]);
   const descriptionY = useTransform(scrollYProgress, [0.3, 0.5], [30, 0]);
 
@@ -65,7 +65,7 @@ export default function Hero({ title, description, image }) {
       </motion.div>
       
       {/* Hero Section */}
-      <div className="h-[600px] flex flex-col justify-center items-center text-center px-6 relative">
+      <div className="h-[500px] sm:h-[600px] flex flex-col justify-center items-center text-center px-6 relative">
         <motion.div
           className="flex flex-col items-center"
           style={{
@@ -75,22 +75,22 @@ export default function Hero({ title, description, image }) {
           }}
         >
           {/* Primer renglón - Waisten Martina */}
-          <div className="hero-split-text text-5xl md:text-7xl lg:text-8xl leading-tight ">
-            <span className="text-part left font-filosofia">Waisten</span>
-            <span className="text-part right font-filosofia">Martina</span>
+          <div className="hero-split-text text-5xl md:text-6xl lg:text-7xl leading-tight ">
+            <span className="text-part left ">Waisten</span>
+            <span className="text-part right ">Martina</span>
           </div>
           
           {/* Segundo renglón - diseñadora gráfica */}
-          <div className="hero-split-text text-base uppercase md:text-xl lg:text-2xl leading-tight">
-            <span className="text-part left font-century-gothic">Diseño Gráfico</span>
-            <span className="text-part right font-century-gothic">y Comunicación Visual</span>
+          <div className="hero-split-text2 text-base uppercase md:text-xl lg:text-2xl leading-tight">
+            <span className="text-part2 left ">Diseño Gráfico</span>
+            <span className="text-part2 right ">y Comunicación Visual</span>
           </div>
         </motion.div>
       </div>
 
       {/* Description Section */}
       <motion.div 
-        className="h-[650px] flex flex-col justify-center items-center text-center px-6"
+        className="h-[300px] sm:h-[650px] flex flex-col justify-center items-center text-center px-6"
         style={{
           opacity: descriptionOpacity,
           scale: descriptionScale,
@@ -108,7 +108,7 @@ export default function Hero({ title, description, image }) {
           </motion.h2>
           
           <motion.p 
-            className="text-lg md:text-xl lg:text-2xl  mb-12 leading-relaxed"
+            className="text-lg md:text-xl lg:text-2xl  mb-12 text-balance leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
