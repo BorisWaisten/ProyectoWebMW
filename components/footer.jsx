@@ -29,7 +29,7 @@ export default function Footer() {
       </div>
 
       {/* Footer base */}
-      <div className="text-center mt-2 text-xs">
+      <div className="text-center mt-4 sm:mt-2 text-xs">
         © 2025 Estudio de Diseño. Todos los derechos reservados.
       </div>
     </footer>
