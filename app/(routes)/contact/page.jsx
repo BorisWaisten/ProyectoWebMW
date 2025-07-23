@@ -1,13 +1,24 @@
 'use client'
 
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import Image from 'next/image'
 import SectionContact from "@/components/section/section-contact"
 
 export default function Contact() {
   const containerRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
 
+  // Detectar si es móvil
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   // Hook para detectar el scroll dentro de la sección
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -35,7 +46,7 @@ export default function Contact() {
           src="/images/hero.jpg" 
           alt="Fondo Contacto" 
           fill 
-          className="object-cover"
+          className={`${isMobile ? 'object-fill' : 'object-cover'}`}
           priority
         />
       </motion.div>

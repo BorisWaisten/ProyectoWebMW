@@ -60,7 +60,7 @@ export default function Navbar() {
         className={`fixed w-full z-50 transition-all duration-300 font-serif ${
           isTop
             ? 'bg-transparent backdrop-blur-none'
-            : 'ease-in-out bg-white/8 backdrop-blur-[.5px]'
+            : 'ease-in-out bg-white/8 backdrop-blur-[1.5px]'
         }`}
       >
       <nav className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center ">
@@ -72,7 +72,8 @@ export default function Navbar() {
               width={50}
               height={50}
               priority
-              className="scale-[2] rounded-full object-cover"
+              quality={100}
+              className="scale-[2] rounded-full object-contain"
               onClick={handleClickHome}
             />
           </ScaleInWrapper>
@@ -108,16 +109,16 @@ export default function Navbar() {
       <div className="md:hidden absolute top-full left-0 right-0 h-1 bg-transparent pointer-events-none" />
 
       <div
-        className={`md:hidden bg-white/6 backdrop-blur-[0.5px] border-white/15 text-gray-900 px-6 transition-all duration-500 overflow-hidden shadow-sm -mt-1 ${
+        className={`md:hidden bg-white/6 backdrop-blur-[2px] border-white/15 text-gray-900 px-6 transition-all duration-500 overflow-hidden shadow-sm -mt-1 ${
           menuOpen ? 'max-h-96 pt-4 pb-4' : 'max-h-0'
         }`}
       >
-        <ul className="flex flex-col gap-6 text-lg">
+        <ul className="flex flex-col gap-6 items-end text-lg">
           {navItems.map((item) => (
             <li key={item.path}>
               <Link
                 href={item.path}
-                className="block py-2 hover:text-[rgb(var(--color-primary))] transition-colors duration-300"
+                className="block  rounded-full p-2 hover:text-[rgb(var(--color-primary))] backdrop-blur-[0.5px] border-white/15 text-gray-900  transition-all duration-500 overflow-hidden shadow-sm -mt-1"
                 onClick={() => {
                   setMenuOpen(false)
                 }}

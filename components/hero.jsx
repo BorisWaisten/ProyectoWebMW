@@ -59,7 +59,7 @@ export default function Hero({ title, description, image }) {
           src={image} 
           alt={title} 
           fill 
-          className=" object-cover "
+          className={`${isMobile ? 'object-fill' : 'object-cover'}`}
           priority
         />
       </motion.div>
