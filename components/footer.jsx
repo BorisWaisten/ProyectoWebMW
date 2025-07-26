@@ -20,7 +20,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="relative z-50 bg-[rgb(var(--color-bg))]/30 text-[rgb(var(--color-text))] py-4 px-6">
+    <footer className="relative z-50 bg-[rgb(var(--color-bg))]/90 text-[rgb(var(--color-text))] py-4 px-6">
        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12 text-sm">
         {/* Logo - siempre a la izquierda */}
         <div className='flex-shrink-0'>
@@ -32,16 +32,16 @@ export default function Footer() {
           {/* Contactar */}
           <div className="text-left text-base md:text-lg">
             <h3 className="font-bold mb-2 md:mb-0">CONTACTO</h3>
-            <div className="space-y-1">
+            <div >
               <div 
-                className="flex items-center gap-2 cursor-pointer hover:text-gray-400 transition-colors select-text"
+                className="flex items-center  cursor-pointer hover:text-gray-400 transition-colors select-text"
                 onClick={() => copyToClipboard('martina.waisten@gmail.com', 'Email')}
                 title="Haz clic para copiar el email"
               >
                 <p className="select-all">martina.waisten@gmail.com</p>
               </div>
               <div 
-                className="flex items-center gap-2 cursor-pointer hover:text-gray-400 transition-colors select-text"
+                className="flex items-center  cursor-pointer hover:text-gray-400 transition-colors select-text"
                 onClick={() => copyToClipboard('+54 11 1234 5678', 'Teléfono')}
                 title="Haz clic para copiar el teléfono"
               >
